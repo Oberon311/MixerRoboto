@@ -140,12 +140,12 @@ CREATE TABLE IF NOT EXISTS `BarDB`.`RecipeIngredients` (
   INDEX `ingredientID_idx` (`ingredientID` ASC),
   PRIMARY KEY (`recIngID`),
   UNIQUE INDEX `recIngID_UNIQUE` (`recIngID` ASC),
-  CONSTRAINT `recipeID`
+  CONSTRAINT `recipeIDRI`
     FOREIGN KEY (`recipeID`)
     REFERENCES `BarDB`.`Recipe` (`recipeID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `ingredientID`
+  CONSTRAINT `ingredientIDRI`
     FOREIGN KEY (`ingredientID`)
     REFERENCES `BarDB`.`Ingredients` (`ingredientID`)
     ON DELETE CASCADE
