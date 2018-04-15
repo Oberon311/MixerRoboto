@@ -1,0 +1,17 @@
+How to get Google Sign-In Working in 15 steps
+
+Step 1) Make your project.
+Step 2) Go to https://console.developers.google.com/apis
+Step 3) Create a Google APIs project.
+Step 4) Go to https://developers.google.com/identity/sign-in/android/start-integrating while signed on to the same google account you created the Google APIs project on.
+Step 5) Scroll down and click Configure a Project.
+Step 6) Take the package name from your android studio project and paste it.
+Step 7) To get the SHA1, open the gradle tab on the right side of android studio.
+Step 8) Expand the root gradle, Tasks folder, and android folder.
+Step 9) Double Click the signingReport.
+Step 10) Copy and paste the SHA1 from the signing report into the project configuration.
+Step 11) Produce the credentials.json after completing configuration.
+Step 12) Copy the credentials.json file.
+Step 13) In Android Studio, At the top left above the project files, swap from android to project.
+Step 14) Paste the credentials.json file in the app folder.
+Step 15) Enjoy the fully functional Google Sign In.
