@@ -12,11 +12,17 @@
     <string name="barcode_success">Barcode read successfully</string>
     <string name="barcode_failure">No barcode captured</string>
     <string name="barcode_error">"Error reading barcode: %1$s"</string>
-    <string name="first_name">First Name:</string>
-    <string name="last_name">Last Name:</string>
-    <string name="birth_date">Birth Date:</string>
-    <string name="expire_date">Expiration Date:</string>
+    <string name="first_name">First Name: </string>
+    <string name="last_name">Last Name: </string>
+    <string name="address">Address: </string>
+    <string name="city">City: </string>
+    <string name="state">State: </string>
+    <string name="sex">Sex: </string>
+    <string name="birth_date">Birth Date: </string>
+    <string name="expire_date">Expire Date: </string>
     <string name="send_info">Send info</string>
     <string name="favorite_drink">Favorite Drink:</string>
     <string name="scanBtn">Scan Your ID</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
 </resources>

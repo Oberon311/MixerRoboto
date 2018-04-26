@@ -5,21 +5,21 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  //$userID = $_POST['username'];
-  //$userID = $_POST['userid'];
-  //$name = $_POST['name'];
-  $userID = '11';
-  $name = "Tricky Doggo";
-  $sex = "M";
-  $weight = "200";
-  $height = "5-11";
-  $dob = "2002-02-28";
-  $address = "123 Ocean Ave";
 
   $email = $_POST['email'];
-  
-  $result = mysqli_query($con, "INSERT INTO user (userID, name, sex, weight, height, dob, address, adminCode, email)
-                                  VALUES ('$userID','$name','$sex','$weight','$height','$dob','$address', NULL, '$email')");
+  $lname = $_POST['lname'];
+  $fname = $_POST['fname'];
+  $dob = $_POST['dob'];
+  $expDate = $_POST['expDate'];
+  $address = $_POST['address'];
+  $city = $_POST['city'];
+  $state = $_POST['state'];
+  $sex = $_POST['sex'];
+  $weight = $_POST['weight'];
+  $height = $_POST['height'];
+
+  $result = mysqli_query($con, "INSERT INTO user (userID, fname, lname, sex, height, weight, dob, address, adminCode, email, city, state, expdate)
+                                  VALUES (NULL, '$fname', '$lname', '$sex','$height','$weight', STR_TO_DATE('$dob', '%m-%d-%Y'), '$address', NULL, '$email', '$city', '$state', STR_TO_DATE('$expDate', '%m-%d-%Y') )");
 
   mysqli_close($con);
  ?>

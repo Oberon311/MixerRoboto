@@ -31,10 +31,33 @@ public class createUser extends AsyncTask<String,Void,String> {
         try{
             String email = (String)arg0[0];
 
+            //These string will hold the parsed data:
+            String lname = (String)arg0[1];
+            String fname = (String)arg0[2];
+            String dob = (String)arg0[3];
+            String expDate = (String)arg0[4];
+            String address = (String)arg0[5];
+            String city = (String)arg0[6];
+            String state = (String)arg0[7];
+            String sex = (String)arg0[8];
+            String weight = (String)arg0[10];
+            String height = (String)arg0[9];
+
+
             String serverIP = "10.106.12.5";
             String link="http://"+serverIP+"/MixerRoboto/create_user.php";
             String data  = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
-            //data += "&" + URLEncoder.encode("ip", "UTF-8") + "=" + URLEncoder.encode(serverIP, "UTF-8");
+            data += "&" + URLEncoder.encode("lname", "UTF-8") + "=" + URLEncoder.encode(lname, "UTF-8");
+            data += "&" + URLEncoder.encode("fname", "UTF-8") + "=" + URLEncoder.encode(fname, "UTF-8");
+            data += "&" + URLEncoder.encode("dob", "UTF-8") + "=" + URLEncoder.encode(dob, "UTF-8");
+            data += "&" + URLEncoder.encode("expDate", "UTF-8") + "=" + URLEncoder.encode(expDate, "UTF-8");
+            data += "&" + URLEncoder.encode("address", "UTF-8") + "=" + URLEncoder.encode(address, "UTF-8");
+            data += "&" + URLEncoder.encode("city", "UTF-8") + "=" + URLEncoder.encode(city, "UTF-8");
+            data += "&" + URLEncoder.encode("state", "UTF-8") + "=" + URLEncoder.encode(state, "UTF-8");
+            data += "&" + URLEncoder.encode("sex", "UTF-8") + "=" + URLEncoder.encode(sex, "UTF-8");
+            data += "&" + URLEncoder.encode("weight", "UTF-8") + "=" + URLEncoder.encode(weight, "UTF-8");
+            data += "&" + URLEncoder.encode("height", "UTF-8") + "=" + URLEncoder.encode(height, "UTF-8");
+
 
             URL url = new URL(link);
             URLConnection conn = url.openConnection();

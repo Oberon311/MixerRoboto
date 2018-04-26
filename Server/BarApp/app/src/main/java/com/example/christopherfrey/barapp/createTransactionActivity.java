@@ -32,11 +32,13 @@ public class createTransactionActivity extends AsyncTask<String,Void,String> {
             String recipeID = (String)arg0[0];
             String email = (String)arg0[1];
 
+
             String serverIP = "10.106.12.5";
             String link="http://"+serverIP+"/MixerRoboto/create_transaction.php";
             String data  = URLEncoder.encode("id", "UTF-8") + "=" + URLEncoder.encode(recipeID, "UTF-8");
             data += "&" + URLEncoder.encode("ip", "UTF-8") + "=" + URLEncoder.encode(serverIP, "UTF-8");
             data += "&" + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
+
 
             URL url = new URL(link);
             URLConnection conn = url.openConnection();
