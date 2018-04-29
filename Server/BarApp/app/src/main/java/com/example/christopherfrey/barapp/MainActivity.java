@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.Auth;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         SignIn = (SignInButton)findViewById(R.id.bn_login);
         found = (TextView)findViewById(R.id.found);

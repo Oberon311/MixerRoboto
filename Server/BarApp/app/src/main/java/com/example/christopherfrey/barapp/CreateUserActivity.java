@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.util.Log;
 import android.widget.TextView;
@@ -32,7 +33,10 @@ public class CreateUserActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_create_user);
+        View YesBtn = findViewById(R.id.yesBtn);
+        YesBtn.setVisibility(View.INVISIBLE);
 
         lastNameValue = findViewById(R.id.lnameScanTxtVw);
         firstNameValue = findViewById(R.id.fnameScanTxtVw);
@@ -103,6 +107,8 @@ public class CreateUserActivity extends AppCompatActivity implements View.OnClic
                     Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
                     //statusMessage.setText(R.string.barcode_success);
                     parseBarcode(barcode.rawValue);
+                    View YesBtn = findViewById(R.id.yesBtn);
+                    YesBtn.setVisibility(View.VISIBLE);
                     Log.d(TAG, "Barcode read: " + barcode.rawValue);
                 } else {
                     //statusMessage.setText(R.string.barcode_failure);

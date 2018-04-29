@@ -1,42 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.christopherfrey.barapp.MainActivity">
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/AppName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingBottom="20dp"
+        android:paddingTop="40dp"
+        android:text="@string/app_name"
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/audiowide" />
+
+    <LinearLayout
         android:id="@+id/login_section"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Sign in with a Google account by tapping below:"
-            />
+            android:text="Sign in with a Google account by tapping below:" />
+
         <com.google.android.gms.common.SignInButton
+            android:id="@+id/bn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:id="@+id/bn_login"
-            />
+            android:layout_marginTop="5dp" />
+
         <TextView
+            android:id="@+id/found"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/found"
             android:gravity="center"
-            android:visibility="invisible"
             android:text=""
-            />
+            android:visibility="invisible" />
     </LinearLayout>
 
 </LinearLayout>

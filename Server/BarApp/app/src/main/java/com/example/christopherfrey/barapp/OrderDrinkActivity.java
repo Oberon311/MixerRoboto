@@ -24,6 +24,7 @@ public class OrderDrinkActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_order_drink);
 
         arrList = new ArrayList<>(Arrays.asList(menu));
