@@ -1,6 +1,7 @@
 package com.example.christopherfrey.barapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,11 @@ import android.widget.CompoundButton;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CreateUserActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,6 +32,8 @@ public class CreateUserActivity extends AppCompatActivity implements View.OnClic
     private TextView sexValue;
     private TextView heightValue;
     private TextView weightValue;
+    private DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
+    private Date dBirthDate;
 
     private static final int RC_BARCODE_CAPTURE = 9001;
     private static final String TAG = "BarcodeMain";
@@ -107,8 +115,19 @@ public class CreateUserActivity extends AppCompatActivity implements View.OnClic
                     Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
                     //statusMessage.setText(R.string.barcode_success);
                     parseBarcode(barcode.rawValue);
-                    View YesBtn = findViewById(R.id.yesBtn);
+                    Button YesBtn = findViewById(R.id.yesBtn);
                     YesBtn.setVisibility(View.VISIBLE);
+                    try {
+                        dBirthDate = df.parse((String) birthDateValue.getText());
+                        long diff = (System.currentTimeMillis() - dBirthDate.getTime())/(1000*60*60*24);
+                        if(diff < 7665) {
+                            YesBtn.setText("Under 21");
+                            YesBtn.setBackgroundColor(Color.RED);
+                            YesBtn.setClickable(false);
+                        }
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                     Log.d(TAG, "Barcode read: " + barcode.rawValue);
                 } else {
                     //statusMessage.setText(R.string.barcode_failure);
